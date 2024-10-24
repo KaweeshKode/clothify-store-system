@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXPasswordField?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.shape.Ellipse?>
+<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="860.0" prefWidth="1310.0" style="-fx-background-color: #5B50FF;" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.clothifystore.crm.controller.LoginWindowController">
+   <children>
+      <Rectangle arcHeight="25.0" arcWidth="25.0" fill="#ada8ff" height="512.0" layoutX="436.0" layoutY="174.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="438.0" />
+      <Ellipse fill="WHITE" layoutX="655.0" layoutY="275.0" radiusX="74.0" radiusY="74.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" />
+      <JFXTextField fx:id="txtEmailId" focusColor="BLACK" layoutX="496.0" layoutY="390.0" prefHeight="50.0" prefWidth="319.0" promptText="EmailID" style="-fx-background-color: ffffff; -fx-background-radius: 0;" unFocusColor="WHITE">
+         <font>
+            <Font size="17.0" />
+         </font>
+      </JFXTextField>
+      <JFXButton alignment="CENTER" buttonType="RAISED" contentDisplay="CENTER" layoutX="597.0" layoutY="560.0" onAction="#btnLogInOnAction" prefHeight="50.0" prefWidth="118.0" ripplerFill="BLACK" style="-fx-background-color: #171440; -fx-background-radius: 6;" text="Log In" textAlignment="CENTER" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="17.0" />
+         </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </JFXButton>
+      <JFXButton contentDisplay="CENTER" layoutX="705.0" layoutY="506.0" onAction="#btnForgotPasswordOnAction" prefHeight="27.0" prefWidth="118.0" style="-fx-background-color: #ada8ff;" text="Forgot Password" textAlignment="CENTER" textFill="#171440" underline="true">
+         <font>
+            <Font size="13.0" />
+         </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </JFXButton>
+      <JFXPasswordField focusColor="BLACK" layoutX="497.0" layoutY="450.0" prefHeight="50.0" prefWidth="319.0" promptText="Password" style="-fx-background-color: #ffffff; -fx-background-radius: 0;" unFocusColor="WHITE">
+         <font>
+            <Font size="17.0" />
+         </font>
+      </JFXPasswordField>
+   </children>
+</AnchorPane>

@@ -1,0 +1,175 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane prefHeight="860.0" prefWidth="1310.0" style="-fx-background-color: ADA8FF;" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.clothifystore.crm.controller.adminuser.UserManagementWindowController">
+   <children>
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#5b50ff" height="860.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="306.0" />
+      <Text fill="WHITE" layoutX="48.0" layoutY="83.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Clothify Store" textAlignment="CENTER">
+         <font>
+            <Font size="35.0" />
+         </font>
+      </Text>
+      <JFXButton layoutY="151.0" prefHeight="44.0" prefWidth="306.0" style="-fx-background-color: #2E2880;" text="Products Management" textAlignment="CENTER" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="20.0" />
+         </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </JFXButton>
+      <Text layoutX="337.0" layoutY="89.0" strokeType="OUTSIDE" strokeWidth="0.0" text="User Management" textAlignment="CENTER">
+         <font>
+            <Font name="System Bold" size="48.0" />
+         </font>
+      </Text>
+      <JFXButton layoutY="205.0" prefHeight="44.0" prefWidth="306.0" style="-fx-background-color: #2E2880;" text="Orders Management" textAlignment="CENTER" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="20.0" />
+         </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </JFXButton>
+      <JFXButton layoutY="259.0" prefHeight="44.0" prefWidth="306.0" style="-fx-background-color: #2E2880;" text="Suppliers Management" textAlignment="CENTER" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="20.0" />
+         </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </JFXButton>
+      <JFXButton layoutY="312.0" prefHeight="44.0" prefWidth="306.0" style="-fx-background-color: #2E2880;" text="Reports" textAlignment="CENTER" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="20.0" />
+         </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </JFXButton>
+      <JFXButton layoutY="365.0" prefHeight="44.0" prefWidth="306.0" style="-fx-background-color: #2E2880;" text="Users Management" textAlignment="CENTER" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="20.0" />
+         </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </JFXButton>
+      <JFXButton alignment="CENTER" buttonType="RAISED" contentDisplay="CENTER" layoutX="90.0" layoutY="790.0" prefHeight="56.0" prefWidth="125.0" style="-fx-background-color: #171440; -fx-background-radius: 6;" text="Log Out" textAlignment="CENTER" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="20.0" />
+         </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </JFXButton>
+      <TableView fx:id="tblUser" layoutX="337.0" layoutY="149.0" prefHeight="270.0" prefWidth="952.0">
+        <columns>
+          <TableColumn fx:id="colUserId" prefWidth="114.0" text="User ID" />
+          <TableColumn fx:id="colFName" prefWidth="150.0" text="First Name" />
+            <TableColumn fx:id="colLName" prefWidth="156.0" text="Last Name" />
+            <TableColumn fx:id="colEmail" prefWidth="261.0" text="Email" />
+            <TableColumn fx:id="colPassword" prefWidth="151.0" text="Password" />
+            <TableColumn fx:id="colRole" prefWidth="119.0" text="Role" />
+        </columns>
+      </TableView>
+      <Label layoutX="375.0" layoutY="457.0" text="User ID :">
+         <font>
+            <Font name="System Bold" size="15.0" />
+         </font>
+      </Label>
+      <JFXTextField fx:id="txtUserId" alignment="CENTER" editable="false" focusColor="BLACK" layoutX="447.0" layoutY="452.0" prefHeight="31.0" prefWidth="131.0" promptText="Auto Generated" style="-fx-background-color: #ffffff; -fx-background-radius: 0;" unFocusColor="WHITE">
+         <font>
+            <Font size="15.0" />
+         </font>
+      </JFXTextField>
+      <Label layoutX="350.0" layoutY="505.0" text="First Name :">
+         <font>
+            <Font name="System Bold" size="15.0" />
+         </font>
+      </Label>
+      <JFXTextField fx:id="txtFName" alignment="CENTER" focusColor="BLACK" layoutX="447.0" layoutY="500.0" prefHeight="31.0" prefWidth="203.0" style="-fx-background-color: #ffffff; -fx-background-radius: 0;" unFocusColor="WHITE">
+         <font>
+            <Font size="15.0" />
+         </font>
+      </JFXTextField>
+      <Label layoutX="350.0" layoutY="557.0" text="Last Name :">
+         <font>
+            <Font name="System Bold" size="15.0" />
+         </font>
+      </Label>
+      <JFXTextField fx:id="txtLName" alignment="CENTER" focusColor="BLACK" layoutX="447.0" layoutY="552.0" prefHeight="31.0" prefWidth="203.0" style="-fx-background-color: #ffffff; -fx-background-radius: 0;" unFocusColor="WHITE">
+         <font>
+            <Font size="15.0" />
+         </font>
+      </JFXTextField>
+      <Label layoutX="385.0" layoutY="609.0" text="Email :">
+         <font>
+            <Font name="System Bold" size="15.0" />
+         </font>
+      </Label>
+      <JFXTextField fx:id="txtEmail" alignment="CENTER" focusColor="BLACK" layoutX="447.0" layoutY="604.0" prefHeight="31.0" prefWidth="306.0" style="-fx-background-color: #ffffff; -fx-background-radius: 0;" unFocusColor="WHITE">
+         <font>
+            <Font size="15.0" />
+         </font>
+      </JFXTextField>
+      <Label layoutX="356.0" layoutY="663.0" text="Password :">
+         <font>
+            <Font name="System Bold" size="15.0" />
+         </font>
+      </Label>
+      <JFXTextField fx:id="txtPassword" alignment="CENTER" focusColor="BLACK" layoutX="447.0" layoutY="658.0" prefHeight="31.0" prefWidth="203.0" style="-fx-background-color: #ffffff; -fx-background-radius: 0;" unFocusColor="WHITE">
+         <font>
+            <Font size="15.0" />
+         </font>
+      </JFXTextField>
+      <Label layoutX="848.0" layoutY="457.0" text="Role :">
+         <font>
+            <Font name="System Bold" size="15.0" />
+         </font>
+      </Label>
+      <ComboBox fx:id="cmbRole" layoutX="897.0" layoutY="452.0" prefHeight="31.0" prefWidth="178.0" promptText="Select" style="-fx-background-color: #ffffff; -fx-background-radius: 0;" />
+      <JFXButton alignment="CENTER" contentDisplay="CENTER" layoutX="447.0" layoutY="723.0" onAction="#btnClearOnAction" prefHeight="44.0" prefWidth="83.0" style="-fx-background-color: #453cc0; -fx-background-radius: 6;" text="Clear" textAlignment="CENTER" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="15.0" />
+         </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </JFXButton>
+      <JFXButton alignment="CENTER" contentDisplay="CENTER" layoutX="897.0" layoutY="723.0" onAction="#btnAddOnAction" prefHeight="44.0" prefWidth="83.0" style="-fx-background-color: #453cc0; -fx-background-radius: 6;" text="Add" textAlignment="CENTER" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="15.0" />
+         </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </JFXButton>
+      <JFXButton alignment="CENTER" contentDisplay="CENTER" layoutX="995.0" layoutY="723.0" onAction="#btnUpdateOnAction" prefHeight="44.0" prefWidth="83.0" style="-fx-background-color: #453cc0; -fx-background-radius: 6;" text="Update" textAlignment="CENTER" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="15.0" />
+         </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </JFXButton>
+      <JFXButton alignment="CENTER" contentDisplay="CENTER" layoutX="1092.0" layoutY="723.0" onAction="#btnDeleteOnAction" prefHeight="44.0" prefWidth="83.0" style="-fx-background-color: #453cc0; -fx-background-radius: 6;" text="Delete" textAlignment="CENTER" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="15.0" />
+         </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </JFXButton>
+   </children>
+</AnchorPane>
