@@ -34,7 +34,7 @@
             <Cursor fx:constant="HAND" />
          </cursor>
       </JFXButton>
-      <JFXPasswordField focusColor="BLACK" layoutX="497.0" layoutY="450.0" prefHeight="50.0" prefWidth="319.0" promptText="Password" style="-fx-background-color: #ffffff; -fx-background-radius: 0;" unFocusColor="WHITE">
+      <JFXPasswordField fx:id="txtPassword" focusColor="BLACK" layoutX="497.0" layoutY="450.0" prefHeight="50.0" prefWidth="319.0" promptText="Password" style="-fx-background-color: #ffffff; -fx-background-radius: 0;" unFocusColor="WHITE">
          <font>
             <Font size="17.0" />
          </font>

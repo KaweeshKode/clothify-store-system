@@ -1,5 +1,6 @@
 package com.clothifystore.crm.service;
 
+import com.clothifystore.crm.service.custom.impl.LoginServiceImpl;
 import com.clothifystore.crm.service.custom.impl.UserServiceImpl;
 import com.clothifystore.crm.util.ServiceType;
 
@@ -14,6 +15,7 @@ public class ServiceFactory {
 
     public <T extends SuperService>T getServiceType(ServiceType type) {
         switch (type) {
+            case LOGIN: return (T) new LoginServiceImpl();
             case USER: return (T) new UserServiceImpl();
         }
         return null;

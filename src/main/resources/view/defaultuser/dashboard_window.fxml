@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane prefHeight="860.0" prefWidth="1310.0" style="-fx-background-color: ADA8FF;" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.clothifystore.crm.controller.defaultuser.DashboardWindowController">
+   <children>
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#5b50ff" height="860.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="306.0" />
+      <Text fill="WHITE" layoutX="48.0" layoutY="83.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Clothify Store" textAlignment="CENTER">
+         <font>
+            <Font size="35.0" />
+         </font>
+      </Text>
+      <JFXButton layoutY="151.0" onAction="#btnProductsManagementWindow" prefHeight="44.0" prefWidth="306.0" style="-fx-background-color: #2E2880;" text="Products Management" textAlignment="CENTER" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="20.0" />
+         </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </JFXButton>
+      <Text layoutX="337.0" layoutY="89.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Employee Dashboard" textAlignment="CENTER">
+         <font>
+            <Font name="System Bold" size="48.0" />
+         </font>
+      </Text>
+      <JFXButton layoutY="205.0" onAction="#btnOrdersManagementWindow" prefHeight="44.0" prefWidth="306.0" style="-fx-background-color: #2E2880;" text="Orders Management" textAlignment="CENTER" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="20.0" />
+         </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </JFXButton>
+      <JFXButton layoutY="259.0" onAction="#btnSuppliersManagementWindow" prefHeight="44.0" prefWidth="306.0" style="-fx-background-color: #2E2880;" text="Suppliers Management" textAlignment="CENTER" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="20.0" />
+         </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </JFXButton>
+      <JFXButton layoutY="312.0" onAction="#btnReportsWindow" prefHeight="44.0" prefWidth="306.0" style="-fx-background-color: #2E2880;" text="Reports" textAlignment="CENTER" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="20.0" />
+         </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </JFXButton>
+      <JFXButton alignment="CENTER" buttonType="RAISED" contentDisplay="CENTER" layoutX="90.0" layoutY="790.0" onAction="#btnLogOutOnAction" prefHeight="56.0" prefWidth="125.0" style="-fx-background-color: #171440; -fx-background-radius: 6;" text="Log Out" textAlignment="CENTER" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="20.0" />
+         </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </JFXButton>
+      <Text fill="#00000057" layoutX="579.0" layoutY="441.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Clothify Store" textAlignment="CENTER" wrappingWidth="471.70947265625">
+         <font>
+            <Font name="System Italic" size="80.0" />
+         </font>
+      </Text>
+   </children>
+</AnchorPane>

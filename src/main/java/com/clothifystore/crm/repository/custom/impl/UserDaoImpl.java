@@ -104,4 +104,32 @@ public class UserDaoImpl implements UserDao {
             }
         }
     }
+
+    @Override
+    public UserEntity findUserByEmailAndPassword(String emailId, String password) {
+        UserEntity entity = null;
+        Session session = null;
+        try {
+            session = HibernateUtil.getSession();
+            session.beginTransaction();
+
+            // query to find user by email and password
+            entity = session.createQuery("FROM UserEntity WHERE email = :emailId AND password = :password", UserEntity.class)
+                    .setParameter("emailId", emailId)
+                    .setParameter("password", password)
+                    .uniqueResult();
+
+            session.getTransaction().commit();
+        } catch (Exception e) {
+            if (session != null && session.getTransaction() != null) {
+                session.getTransaction().rollback();
+            }
+            e.printStackTrace();
+        } finally {
+            if (session != null) {
+                session.close();
+            }
+        }
+        return entity;
+    }
 }
