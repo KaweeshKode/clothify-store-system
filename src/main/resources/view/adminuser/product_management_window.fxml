@@ -28,7 +28,7 @@
             <Cursor fx:constant="HAND" />
          </cursor>
       </JFXButton>
-      <Text layoutX="337.0" layoutY="89.0" strokeType="OUTSIDE" strokeWidth="0.0" text="User Management" textAlignment="CENTER">
+      <Text layoutX="337.0" layoutY="89.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Product Management" textAlignment="CENTER">
          <font>
             <Font name="System Bold" size="48.0" />
          </font>
@@ -73,72 +73,72 @@
             <Cursor fx:constant="HAND" />
          </cursor>
       </JFXButton>
-      <TableView fx:id="tblUser" layoutX="337.0" layoutY="149.0" prefHeight="270.0" prefWidth="952.0">
+      <TableView fx:id="tblProduct" layoutX="337.0" layoutY="149.0" prefHeight="270.0" prefWidth="952.0">
         <columns>
-          <TableColumn fx:id="colUserId" prefWidth="114.0" text="User ID" />
-          <TableColumn fx:id="colFName" prefWidth="150.0" text="First Name" />
-            <TableColumn fx:id="colLName" prefWidth="156.0" text="Last Name" />
-            <TableColumn fx:id="colEmail" prefWidth="261.0" text="Email" />
-            <TableColumn fx:id="colPassword" prefWidth="151.0" text="Password" />
-            <TableColumn fx:id="colRole" prefWidth="119.0" text="Role" />
+          <TableColumn fx:id="colProductId" prefWidth="95.0" text="Product ID" />
+          <TableColumn fx:id="colProductName" prefWidth="253.0" text="Name" />
+            <TableColumn fx:id="colSize" prefWidth="123.0" text="Size" />
+            <TableColumn fx:id="colPrice" prefWidth="149.0" text="Price" />
+            <TableColumn fx:id="colQuantity" prefWidth="143.0" text="Quantity" />
+            <TableColumn fx:id="colCategory" prefWidth="167.0" text="Category" />
         </columns>
       </TableView>
-      <Label layoutX="375.0" layoutY="457.0" text="User ID :">
+      <Label layoutX="351.0" layoutY="457.0" text="Product ID :">
          <font>
             <Font name="System Bold" size="15.0" />
          </font>
       </Label>
-      <JFXTextField fx:id="txtUserId" alignment="CENTER" editable="false" focusColor="BLACK" layoutX="447.0" layoutY="452.0" prefHeight="31.0" prefWidth="131.0" promptText="Auto Generated" style="-fx-background-color: #ffffff; -fx-background-radius: 0;" unFocusColor="WHITE">
+      <JFXTextField fx:id="txtProductId" alignment="CENTER" editable="false" focusColor="BLACK" layoutX="447.0" layoutY="452.0" prefHeight="31.0" prefWidth="131.0" promptText="Auto Generated" style="-fx-background-color: #ffffff; -fx-background-radius: 0;" unFocusColor="WHITE">
          <font>
             <Font size="15.0" />
          </font>
       </JFXTextField>
-      <Label layoutX="350.0" layoutY="505.0" text="First Name :">
+      <Label layoutX="384.0" layoutY="505.0" text="Name :">
          <font>
             <Font name="System Bold" size="15.0" />
          </font>
       </Label>
-      <JFXTextField fx:id="txtFName" alignment="CENTER" focusColor="BLACK" layoutX="447.0" layoutY="500.0" prefHeight="31.0" prefWidth="203.0" style="-fx-background-color: #ffffff; -fx-background-radius: 0;" unFocusColor="WHITE">
+      <JFXTextField fx:id="txtProductName" alignment="CENTER" focusColor="BLACK" layoutX="447.0" layoutY="500.0" prefHeight="31.0" prefWidth="282.0" style="-fx-background-color: #ffffff; -fx-background-radius: 0;" unFocusColor="WHITE">
          <font>
             <Font size="15.0" />
          </font>
       </JFXTextField>
-      <Label layoutX="350.0" layoutY="557.0" text="Last Name :">
+      <Label layoutX="398.0" layoutY="557.0" text="Size :">
          <font>
             <Font name="System Bold" size="15.0" />
          </font>
       </Label>
-      <JFXTextField fx:id="txtLName" alignment="CENTER" focusColor="BLACK" layoutX="447.0" layoutY="552.0" prefHeight="31.0" prefWidth="203.0" style="-fx-background-color: #ffffff; -fx-background-radius: 0;" unFocusColor="WHITE">
+      <JFXTextField fx:id="txtSize" alignment="CENTER" focusColor="BLACK" layoutX="447.0" layoutY="552.0" prefHeight="31.0" prefWidth="131.0" style="-fx-background-color: #ffffff; -fx-background-radius: 0;" unFocusColor="WHITE">
          <font>
             <Font size="15.0" />
          </font>
       </JFXTextField>
-      <Label layoutX="385.0" layoutY="609.0" text="Email :">
+      <Label layoutX="390.0" layoutY="609.0" text="Price :">
          <font>
             <Font name="System Bold" size="15.0" />
          </font>
       </Label>
-      <JFXTextField fx:id="txtEmail" alignment="CENTER" focusColor="BLACK" layoutX="447.0" layoutY="604.0" prefHeight="31.0" prefWidth="306.0" style="-fx-background-color: #ffffff; -fx-background-radius: 0;" unFocusColor="WHITE">
+      <JFXTextField fx:id="txtPrice" alignment="CENTER" focusColor="BLACK" layoutX="447.0" layoutY="604.0" prefHeight="31.0" prefWidth="178.0" style="-fx-background-color: #ffffff; -fx-background-radius: 0;" unFocusColor="WHITE">
          <font>
             <Font size="15.0" />
          </font>
       </JFXTextField>
-      <Label layoutX="356.0" layoutY="663.0" text="Password :">
+      <Label layoutX="363.0" layoutY="663.0" text="Quantity :">
          <font>
             <Font name="System Bold" size="15.0" />
          </font>
       </Label>
-      <JFXTextField fx:id="txtPassword" alignment="CENTER" focusColor="BLACK" layoutX="447.0" layoutY="658.0" prefHeight="31.0" prefWidth="203.0" style="-fx-background-color: #ffffff; -fx-background-radius: 0;" unFocusColor="WHITE">
+      <JFXTextField fx:id="txtQuantity" alignment="CENTER" focusColor="BLACK" layoutX="447.0" layoutY="658.0" prefHeight="31.0" prefWidth="131.0" style="-fx-background-color: #ffffff; -fx-background-radius: 0;" unFocusColor="WHITE">
          <font>
             <Font size="15.0" />
          </font>
       </JFXTextField>
-      <Label layoutX="848.0" layoutY="457.0" text="Role :">
+      <Label layoutX="811.0" layoutY="457.0" text="Category :">
          <font>
             <Font name="System Bold" size="15.0" />
          </font>
       </Label>
-      <ComboBox fx:id="cmbRole" layoutX="897.0" layoutY="452.0" prefHeight="31.0" prefWidth="178.0" promptText="Select" style="-fx-background-color: #ffffff; -fx-background-radius: 0;" />
+      <ComboBox fx:id="cmbCategory" layoutX="897.0" layoutY="452.0" prefHeight="31.0" prefWidth="178.0" promptText="Select" style="-fx-background-color: #ffffff; -fx-background-radius: 0;" />
       <JFXButton alignment="CENTER" contentDisplay="CENTER" layoutX="447.0" layoutY="723.0" onAction="#btnClearOnAction" prefHeight="44.0" prefWidth="83.0" style="-fx-background-color: #453cc0; -fx-background-radius: 6;" text="Clear" textAlignment="CENTER" textFill="WHITE">
          <font>
             <Font name="System Bold" size="15.0" />

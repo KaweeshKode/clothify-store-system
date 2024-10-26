@@ -1,5 +1,6 @@
 package com.clothifystore.crm.util;
 
 public enum DaoType {
-    USER
+    USER,
+    PRODUCT
 }
