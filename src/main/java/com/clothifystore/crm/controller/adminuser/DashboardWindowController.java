@@ -33,7 +33,16 @@ public class DashboardWindowController {
 
     @FXML
     void btnSuppliersManagementWindow(ActionEvent event) {
-        //TODO
+        try {
+            Stage stage = new Stage();
+            stage.setScene(new Scene(FXMLLoader.load(getClass().getResource("../../../../../view/adminuser/supplier_management_window.fxml"))));
+            stage.setTitle("Clothify Store");
+            stage.show();
+            Stage currentStage = (Stage) ((Node) event.getSource()).getScene().getWindow(); // close the current window
+            currentStage.close();
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
     }
 
     @FXML

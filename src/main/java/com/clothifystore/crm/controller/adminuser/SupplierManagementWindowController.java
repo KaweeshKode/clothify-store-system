@@ -1,8 +1,8 @@
 package com.clothifystore.crm.controller.adminuser;
 
-import com.clothifystore.crm.dto.User;
+import com.clothifystore.crm.dto.Supplier;
 import com.clothifystore.crm.service.ServiceFactory;
-import com.clothifystore.crm.service.custom.UserService;
+import com.clothifystore.crm.service.custom.SupplierService;
 import com.clothifystore.crm.util.ServiceType;
 import com.jfoenix.controls.JFXTextField;
 import javafx.collections.FXCollections;
@@ -14,7 +14,6 @@ import javafx.fxml.Initializable;
 import javafx.scene.Node;
 import javafx.scene.Scene;
 import javafx.scene.control.Alert;
-import javafx.scene.control.ComboBox;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
@@ -25,68 +24,56 @@ import java.net.URL;
 import java.util.List;
 import java.util.ResourceBundle;
 
-public class UserManagementWindowController implements Initializable {
+
+public class SupplierManagementWindowController implements Initializable {
 
     @FXML
-    private ComboBox<String> cmbRole;
+    private TableColumn<?, ?> colCompany;
+
+    @FXML
+    private TableColumn<?, ?> colContactInfo;
 
     @FXML
     private TableColumn<?, ?> colEmail;
 
     @FXML
-    private TableColumn<?, ?> colFName;
+    private TableColumn<?, ?> colSupplierId;
 
     @FXML
-    private TableColumn<?, ?> colLName;
+    private TableColumn<?, ?> colSupplierName;
 
     @FXML
-    private TableColumn<?, ?> colPassword;
+    private TableView<Supplier> tblSupplier;
 
     @FXML
-    private TableColumn<?, ?> colRole;
+    private JFXTextField txtCompany;
 
     @FXML
-    private TableColumn<?, ?> colUserId;
-
-    @FXML
-    private TableView<User> tblUser;
+    private JFXTextField txtContactInfo;
 
     @FXML
     private JFXTextField txtEmail;
 
     @FXML
-    private JFXTextField txtFName;
+    private JFXTextField txtSupplierId;
 
     @FXML
-    private JFXTextField txtLName;
+    private JFXTextField txtSupplierName;
 
-    @FXML
-    private JFXTextField txtPassword;
-
-    @FXML
-    private JFXTextField txtUserId;
-
-    UserService userService = ServiceFactory.getInstance().getServiceType(ServiceType.USER);
+    SupplierService supplierService = ServiceFactory.getInstance().getServiceType(ServiceType.SUPPLIER);
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         // initialize the table columns at the window load
-        colUserId.setCellValueFactory(new PropertyValueFactory<>("userId"));
-        colFName.setCellValueFactory(new PropertyValueFactory<>("firstName"));
-        colLName.setCellValueFactory(new PropertyValueFactory<>("lastName"));
+        colSupplierId.setCellValueFactory(new PropertyValueFactory<>("supplierId"));
+        colSupplierName.setCellValueFactory(new PropertyValueFactory<>("supplierName"));
         colEmail.setCellValueFactory(new PropertyValueFactory<>("email"));
-        colPassword.setCellValueFactory(new PropertyValueFactory<>("password"));
-        colRole.setCellValueFactory(new PropertyValueFactory<>("role"));
+        colCompany.setCellValueFactory(new PropertyValueFactory<>("company"));
+        colContactInfo.setCellValueFactory(new PropertyValueFactory<>("contactInfo"));
         loadTable();
 
-        // initialize the combo box and set values to select the roles
-        ObservableList<String> roleList = FXCollections.observableArrayList();
-        roleList.add("Admin");
-        roleList.add("User(Employee)");
-        cmbRole.setItems(roleList);
-
         //set selected row values in table to field
-        tblUser.getSelectionModel().selectedItemProperty().addListener((observable, oldValue, newValue) -> {
+        tblSupplier.getSelectionModel().selectedItemProperty().addListener((observable, oldValue, newValue) -> {
             if (newValue != null) {
                 addValuesToField(newValue);
             }
@@ -95,16 +82,15 @@ public class UserManagementWindowController implements Initializable {
 
     @FXML
     void btnAddOnAction(ActionEvent event) {
-        User user = new User(
+        Supplier supplier = new Supplier(
                 null,
-                txtFName.getText(),
-                txtLName.getText(),
+                txtSupplierName.getText(),
                 txtEmail.getText(),
-                txtPassword.getText(),
-                cmbRole.getValue()
+                txtCompany.getText(),
+                txtContactInfo.getText()
         );
-        if (userService.addUser(user)) {
-            new Alert(Alert.AlertType.INFORMATION, "User Added Successfully").show();
+        if (supplierService.addSupplier(supplier)) {
+            new Alert(Alert.AlertType.INFORMATION, "Supplier Added Successfully").show();
         } else {
             new Alert(Alert.AlertType.ERROR, "Something Went Wrong").show();
         }
@@ -120,8 +106,8 @@ public class UserManagementWindowController implements Initializable {
 
     @FXML
     void btnDeleteOnAction(ActionEvent event) {
-        if (userService.deleteUser(Integer.valueOf(txtUserId.getText()))) {
-            new Alert(Alert.AlertType.INFORMATION, "User Deleted Successfully").show();
+        if (supplierService.deleteSupplier(Integer.valueOf(txtSupplierId.getText()))) {
+            new Alert(Alert.AlertType.INFORMATION, "Supplier Deleted Successfully").show();
         } else {
             new Alert(Alert.AlertType.ERROR, "Something Went Wrong").show();
         }
@@ -131,16 +117,15 @@ public class UserManagementWindowController implements Initializable {
 
     @FXML
     void btnUpdateOnAction(ActionEvent event) {
-        User user = new User(
-                Integer.valueOf(txtUserId.getText()),
-                txtFName.getText(),
-                txtLName.getText(),
+        Supplier supplier = new Supplier(
+                Integer.valueOf(txtSupplierId.getText()),
+                txtSupplierName.getText(),
                 txtEmail.getText(),
-                txtPassword.getText(),
-                cmbRole.getValue()
+                txtCompany.getText(),
+                txtContactInfo.getText()
         );
-        if (userService.updateUser(user)) {
-            new Alert(Alert.AlertType.INFORMATION, "User Updated Successfully").show();
+        if (supplierService.updateSupplier(supplier)) {
+            new Alert(Alert.AlertType.INFORMATION, "Supplier Added Successfully").show();
         } else {
             new Alert(Alert.AlertType.ERROR, "Something Went Wrong").show();
         }
@@ -150,32 +135,30 @@ public class UserManagementWindowController implements Initializable {
 
     // to clear the text fields and combo box
     private void clearFields() {
-        txtUserId.clear();
-        txtFName.clear();
-        txtLName.clear();
+        txtSupplierId.clear();
+        txtSupplierName.clear();
         txtEmail.clear();
-        txtPassword.clear();
-        cmbRole.valueProperty().setValue(null);
+        txtCompany.clear();
+        txtContactInfo.clear();
     }
 
     // to load table data
     private void loadTable() {
-        ObservableList<User> allUsers = FXCollections.observableArrayList();
-        List<User> users = userService.viewUsers();
-        for (User user : users) {
-            allUsers.add(user);
+        ObservableList<Supplier> allSuppliers = FXCollections.observableArrayList();
+        List<Supplier> suppliers = supplierService.viewSuppliers();
+        for (Supplier supplier : suppliers) {
+            allSuppliers.add(supplier);
         }
-        tblUser.setItems(allUsers);
+        tblSupplier.setItems(allSuppliers);
     }
 
     // add selected values to fields in UI
-    private void addValuesToField(User user) {
-        txtUserId.setText(String.valueOf(user.getUserId()));
-        txtFName.setText(user.getFirstName());
-        txtLName.setText(user.getLastName());
-        txtEmail.setText(user.getEmail());
-        txtPassword.setText(user.getPassword());
-        cmbRole.setValue(user.getRole());
+    private void addValuesToField(Supplier supplier) {
+        txtSupplierId.setText(String.valueOf(supplier.getSupplierId()));
+        txtSupplierName.setText(supplier.getSupplierName());
+        txtEmail.setText(supplier.getEmail());
+        txtCompany.setText(supplier.getCompany());
+        txtContactInfo.setText(supplier.getContactInfo());
     }
 
     // navigations to the other windows
@@ -200,16 +183,7 @@ public class UserManagementWindowController implements Initializable {
 
     @FXML
     void btnSuppliersManagementWindow(ActionEvent event) {
-        try {
-            Stage stage = new Stage();
-            stage.setScene(new Scene(FXMLLoader.load(getClass().getResource("../../../../../view/adminuser/supplier_management_window.fxml"))));
-            stage.setTitle("Clothify Store");
-            stage.show();
-            Stage currentStage = (Stage) ((Node) event.getSource()).getScene().getWindow(); // close the current window
-            currentStage.close();
-        } catch (IOException e) {
-            throw new RuntimeException(e);
-        }
+        //TODO
     }
 
     @FXML
@@ -219,7 +193,16 @@ public class UserManagementWindowController implements Initializable {
 
     @FXML
     void btnUsersManagementWindow(ActionEvent event) {
-        //TODO
+        try {
+            Stage stage = new Stage();
+            stage.setScene(new Scene(FXMLLoader.load(getClass().getResource("../../../../../view/adminuser/user_management_window.fxml"))));
+            stage.setTitle("Clothify Store");
+            stage.show();
+            Stage currentStage = (Stage) ((Node) event.getSource()).getScene().getWindow(); // close the current window
+            currentStage.close();
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
     }
 
     @FXML
